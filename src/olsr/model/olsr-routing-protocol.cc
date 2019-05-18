@@ -120,7 +120,7 @@
 /********** Miscellaneous constants **********/
 
 /// Maximum allowed jitter.
-#define OLSR_MAXJITTER          (m_helloInterval.GetSeconds () / 4)
+#define OLSR_MAXJITTER          (m_helloInterval.GetSeconds () / 2)
 /// Maximum allowed sequence number.
 #define OLSR_MAX_SEQ_NUM        65535
 /// Random number between [0-OLSR_MAXJITTER] used to jitter OLSR packet transmission.
@@ -695,7 +695,7 @@ RoutingProtocol::YRecvOlsr (Ptr< Packet> receivedPacket, Ipv4Address src)
 
   NS_LOG_UNCOND(Simulator::Now().GetSeconds()<<","<<this->m_mainAddress<<"route table:");
   for(auto it = m_table.begin();it!=m_table.end(); it++){
-	  NS_LOG_UNCOND(it->first<<", via"<<it->second.nextAddr);
+//	  NS_LOG_UNCOND(it->first<<", via"<<it->second.nextAddr);
 
   }
 }
